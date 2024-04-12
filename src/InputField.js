@@ -36,9 +36,10 @@ export default function InputField(props) {
 
   useEffect(() => {
     const getDataFromLs = JSON.parse(localStorage.getItem("selectedCountries"));
-    const selectedCountryInLowerCase = getDataFromLs.source.toLowerCase();
+    const selectedCountryInLowerCase =
+      getDataFromLs?.source?.toLowerCase() ?? "INR";
     setDestinationSelectedCurrency(getDataFromLs?.destination);
-    setSourceSelectedCurrency(getDataFromLs.source);
+    setSourceSelectedCurrency(getDataFromLs?.source);
     axios
       .get(
         `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${selectedCountryInLowerCase}.json`
