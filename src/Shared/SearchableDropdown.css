@@ -1,0 +1,73 @@
+.ant-modal-content {
+  background-color: #ffffff !important;
+  width: 361px !important;
+  box-shadow: none !important;
+  padding: 6px !important;
+  height: auto !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.ant-modal-mask {
+  background-color: transparent !important;
+}
+
+.ant-select-selector:hover,
+.ant-select-selector:focus,
+.ant-select-selector:active {
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 2px #6c6c6b !important;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+
+.ant-select-selector {
+  all: unset;
+  border-radius: 10px !important;
+  border: 0.5px solid rgb(171, 173, 171) !important;
+  background: #ffffff !important;
+}
+
+.ant-select-selector {
+  padding-inline-start: 40px !important;
+}
+.ant-select-selector input {
+  padding-inline-start: 29px !important;
+}
+
+.placeholder {
+  color: #6c6c6b;
+  font-family: inherit;
+  inset-inline-start: 11px !important;
+}
+
+.ant-select-arrow {
+  inset-inline-end: unset !important;
+  padding-inline-start: 11px !important;
+}
+
+.ant-select-item:not(.ant-select-item-group):not(
+    .ant-select-item-option-disabled
+  ):hover,
+.ant-select-item:not(.ant-select-item-group):not(
+    .ant-select-item-option-disabled
+  ):focus {
+  border-radius: 10px !important;
+  border: 0.5px solid rgb(171, 173, 171) !important;
+  background-color: #ffffff !important;
+}
+
+.ant-select-item-option-disabled {
+  all: unset !important;
+  color: black !important;
+  cursor: pointer !important;
+  font-size: 0.775rem !important;
+  line-height: 155% !important;
+  letter-spacing: -0.006em !important;
+  font-weight: 400 !important;
+  font-family: inherit !important;
+  padding-left: 20px !important;
+}
+
+.ant-select-item-option-disabled a {
+  all: unset !important;
+}
