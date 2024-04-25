@@ -44,28 +44,23 @@ function ChargesModal(props) {
           {option?.label}
         </header>
       ))}
-      {selectedSourceCurrency &&
-        chargesOption[0].options[selectedSourceCurrency].map(
-          (option, index) => (
-            <div
-              className="np-select-input-option"
-              key={Math.random(10)}
-              onClick={(e) => {
-                onItemSelect(e, index);
-                getListOpenStatus(false);
-              }}
-            >
-              <h4 className="np-select-input-option-content-text-primary">
-                {option?.label}
-              </h4>
-              <span className="np-select-input-option-content-text-secondary">
-                {option.percentageOfCharge
-                  ? calculateCharge(option)
-                  : option?.desc}
-              </span>
-            </div>
-          )
-        )}
+      {chargesOption[0].options[selectedSourceCurrency].map((option, index) => (
+        <div
+          className="np-select-input-option"
+          key={Math.random(10)}
+          onClick={(e) => {
+            onItemSelect(e, index);
+            getListOpenStatus(false);
+          }}
+        >
+          <h4 className="np-select-input-option-content-text-primary">
+            {option?.label}
+          </h4>
+          <span className="np-select-input-option-content-text-secondary">
+            {option.percentageOfCharge ? calculateCharge(option) : option?.desc}
+          </span>
+        </div>
+      ))}
     </Modal>
   );
 }

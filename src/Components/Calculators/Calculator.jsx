@@ -9,6 +9,7 @@ import "./calculator.css";
 //utils
 import { getDataFromLs } from "../../Utils/helper";
 import { UseCurrencyInfo } from "../../Utils/CustomHooks/UseCurrencyInfo";
+import { type } from "@testing-library/user-event/dist/type";
 
 const convert = (currencyInfo, selectedDestinationCurrency) => {
   let rate = currencyInfo[selectedDestinationCurrency.toLowerCase()];
@@ -29,7 +30,10 @@ export default function Calculator() {
 
   //UseMemo-hooks
   useMemo(() => {
-    const CURRENTRATE = convert(currencyInfo, selectedDestinationCurrency);
+    let CURRENTRATE = 0;
+    if (Object.keys(currencyInfo).length) {
+      CURRENTRATE = convert(currencyInfo, selectedDestinationCurrency);
+    }
     setRate(CURRENTRATE);
   }, [currencyInfo, selectedDestinationCurrency]);
 

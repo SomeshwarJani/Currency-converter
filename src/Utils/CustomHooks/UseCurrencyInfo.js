@@ -5,7 +5,7 @@ import axios from "axios";
 import { getDataFromLs } from "../helper";
 
 export const UseCurrencyInfo = () => {
-  const [currencyInfo, setCurrencyInfo] = useState([]);
+  const [currencyInfo, setCurrencyInfo] = useState({});
   const { sourceToLower } = getDataFromLs();
 
   const fetchCurrencyInfo = async (sourceToLower) => {
@@ -14,6 +14,10 @@ export const UseCurrencyInfo = () => {
     if (response && response.data)
       setCurrencyInfo(response.data[sourceToLower]);
   };
+
+  useEffect(() => {
+    fetchCurrencyInfo(sourceToLower);
+  }, []);
 
   useEffect(() => {
     fetchCurrencyInfo(sourceToLower);

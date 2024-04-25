@@ -62,11 +62,7 @@
   font-weight: 600;
 }
 
-.d-inline {
-  margin: 0;
-}
-
-.np-select-input-option-content-text-line-1 {
+.charges_label {
   text-underline-offset: 0.2em;
 }
 
@@ -89,4 +85,9 @@
 .d-inline {
   color: #0e0f0c;
   font-weight: 600;
+  margin: 0;
+}
+.inactive {
+  text-decoration: none;
+  cursor: default;
 }
