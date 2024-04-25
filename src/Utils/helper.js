@@ -671,3 +671,20 @@ export const chargesOption = [
     },
   },
 ];
+
+export const getDataFromLs = () => {
+  const DATA = localStorage.getItem("selectedCountries");
+  const PARSEDDATA = JSON.parse(DATA);
+  const currencyDataObj = {
+    source: PARSEDDATA.source,
+    destination: PARSEDDATA.destination,
+    sourceToLower: PARSEDDATA.source.toLowerCase(),
+    destinationToLower: PARSEDDATA.destination.toLowerCase(),
+  };
+  return currencyDataObj;
+};
+
+export const setDataToLs = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+  window.dispatchEvent(new Event("storage"));
+};

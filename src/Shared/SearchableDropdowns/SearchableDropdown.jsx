@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Select, Space, Modal } from "antd";
-import { Options } from "../Utils/helper.js";
+import { Options, getDataFromLs, setDataToLs } from "../../Utils/helper.js";
 import "./SearchableDropdown.css";
 
 function SearchableDropdown(props) {
   const {
-    getSelectedValue,
     isSearchOpen,
     isSource,
     isModalOpen,
@@ -29,12 +28,20 @@ function SearchableDropdown(props) {
   };
 
   const handleChange = (value) => {
+    let selectedCountries = { source: "", destination: "" };
+    let { source, destination } = getDataFromLs();
+
+    if (source && destination) {
+      selectedCountries = { source, destination };
+    }
     if (isSource) {
       setSourceSelectedCurrency(value);
+      selectedCountries.source = value;
     } else {
       setDestinationSelectedCurrency(value);
+      selectedCountries.destination = value;
     }
-    getSelectedValue(value, false);
+    setDataToLs("selectedCountries", selectedCountries);
     isModalOpen(false);
     setIsOpen(false);
   };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ChargesModal from "./Shared/ChargesModal";
+import ChargesModal from "../../Shared/ChargeModals/ChargesModal";
 import "./Listitems.css";
-import { chargesOption } from "./Utils/helper";
+import { chargesOption } from "../../Utils/helper";
 
 function ListItems(props) {
   const {

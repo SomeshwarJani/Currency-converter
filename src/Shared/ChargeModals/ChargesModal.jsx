@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal } from "antd";
 import "./ChargesModal.css";
-import { chargesOption } from "../Utils/helper";
+import { chargesOption } from "../../Utils/helper";
 
 function ChargesModal(props) {
   const {
@@ -10,7 +10,6 @@ function ChargesModal(props) {
     getSelectedItem,
     selectedSourceCurrency,
     sourceInput,
-    destinationInput,
   } = props;
 
   const onItemSelect = (event, index) => {
